@@ -39,9 +39,9 @@ class Server {
   start () {
     this.app.listen(this.port, () => {
       console.log('Server ON Port: ' + this.port)
-      //conexion.sync({ force: false, alter: true }).then(() => {
-      //  console.log('Base de datos sincronizada correctamente')
-      //})
+      conexion.sync({ force: true, alter: true }).then(() => {
+        console.log('Base de datos sincronizada correctamente')
+      })
     })
   }
 }
